@@ -75,7 +75,7 @@ export function Header() {
         className={`fixed left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
             ? 'top-0 bg-white shadow-lg shadow-black/5 py-3'
-            : 'lg:top-10 top-0 bg-gradient-to-b from-black/50 to-transparent py-4'
+            : 'lg:top-10 top-0 bg-black/60 backdrop-blur-sm py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

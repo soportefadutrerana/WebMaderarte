@@ -139,18 +139,20 @@ export default function HomePage() {
 
       {/* Hero Section - Cinematic Design */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background with Parallax */}
-        <motion.div style={{ y: heroY }} className="absolute inset-0">
-          <Image
-            src="/uploads/WhatsApp Image 2025-12-01 at 21.49.30.jpeg"
-            alt="Puerta de madera artesanal - Carpintería Maderarte"
-            fill
-            className="object-cover scale-110"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1410]/95 via-[#1a1410]/80 to-[#1a1410]/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1410] via-transparent to-transparent" />
-        </motion.div>
+        {/* Video Background */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover scale-105"
+          >
+            <source src="/video/166808-835670743_tiny.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1410]/70 via-[#1a1410]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1410]/80 via-transparent to-transparent" />
+        </div>
 
         {/* Animated Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -264,34 +266,21 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  {/* Floating Quality Badge */}
+                  {/* Floating Quality Badge - Top Right */}
                   <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.8 }}
-                    className="absolute -right-6 top-1/4 glass rounded-2xl p-4 shadow-2xl"
+                    className="absolute right-4 top-8 glass rounded-2xl p-3 shadow-2xl"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
-                        <Award className="w-6 h-6 text-white" />
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+                        <Award className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <p className="text-white font-bold">Premium</p>
+                        <p className="text-white font-bold text-sm">Premium</p>
                         <p className="text-white/60 text-xs">Calidad garantizada</p>
                       </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Floating Experience Badge */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 1 }}
-                    className="absolute -left-6 bottom-1/4 bg-white rounded-2xl p-4 shadow-2xl"
-                  >
-                    <div className="text-center">
-                      <p className="text-4xl font-bold text-accent">25+</p>
-                      <p className="text-sm text-muted-foreground">Años de<br/>experiencia</p>
                     </div>
                   </motion.div>
                 </div>
