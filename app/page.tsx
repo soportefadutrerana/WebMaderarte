@@ -17,7 +17,6 @@ import {
   ArrowRight,
   Star,
   Award,
-  Users,
   Calendar,
   Sparkles,
   Ruler,
@@ -123,7 +122,6 @@ export default function HomePage() {
     target: heroRef,
     offset: ["start start", "end start"]
   })
-  const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
   const [servicesRef, servicesInView] = useInView({ triggerOnce: true, threshold: 0.1 })
@@ -177,22 +175,10 @@ export default function HomePage() {
         {/* Content */}
         <motion.div style={{ opacity: heroOpacity }} className="relative z-10 w-full">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Column - Text */}
-              <div className="text-left">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="inline-flex items-center gap-3 glass rounded-full px-5 py-2.5 mb-8"
-                >
-                  <span className="flex h-2 w-2 relative">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-                  </span>
-                  <span className="text-white/90 text-sm font-medium tracking-wide">Carpintería artesanal desde 1999</span>
-                </motion.div>
-
+              <div>
+                {/* Title */}
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -206,85 +192,166 @@ export default function HomePage() {
                   <span className="text-gradient">a Medida</span>
                 </motion.h1>
 
+                {/* Description */}
                 <motion.p
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-lg sm:text-xl text-white/70 mb-10 max-w-lg leading-relaxed"
+                  className="text-lg sm:text-xl text-white/70 mb-10 max-w-xl leading-relaxed"
                 >
                   Transformamos espacios con muebles únicos. Especialistas en puertas, armarios y mobiliario personalizado con la más alta calidad artesanal.
                 </motion.p>
 
+                {/* CTA Buttons */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
-                  className="flex flex-col sm:flex-row gap-4 mb-14"
+                  className="flex flex-col sm:flex-row gap-4"
                 >
-                  <Button asChild size="lg" className="btn-premium text-white rounded-full px-8 py-7 text-base font-semibold">
+                  <Button asChild size="lg" className="btn-premium text-white rounded-full px-10 py-7 text-base font-semibold">
                     <Link href="/contacto">
                       Solicitar Presupuesto
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Link>
                   </Button>
-                  <Button asChild size="lg" variant="outline" className="glass border-white/20 text-white hover:bg-white/10 rounded-full px-8 py-7 text-base">
+                  <Button asChild size="lg" variant="outline" className="glass border-white/20 text-white hover:bg-white/10 rounded-full px-10 py-7 text-base">
                     <Link href="/galeria" className="flex items-center gap-2">
                       <Play className="w-4 h-4" />
                       Ver Trabajos
                     </Link>
                   </Button>
                 </motion.div>
-
               </div>
 
-              {/* Right Column - Featured Image with Floating Cards */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 0.4 }}
-                className="hidden lg:block relative"
-              >
-                <div className="relative">
-                  {/* Main Image */}
-                  <div className="relative glass rounded-3xl p-2 overflow-hidden">
-                    <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
-                      <Image
-                        src="/uploads/vista-frontal-de-la-entrada-al-edificio-de-la-ciudad.jpg"
-                        alt="Trabajo de carpintería premium"
-                        fill
-                        className="object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                      {/* Image overlay content */}
-                      <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <div className="glass-dark rounded-2xl p-4">
-                          <p className="text-white font-semibold text-lg mb-1">Puertas de entrada</p>
-                          <p className="text-white/70 text-sm">Diseño exclusivo a medida</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Floating Quality Badge - Top Right */}
+              {/* Right Column - Carpentry Tools */}
+              <div className="hidden lg:flex items-center justify-center relative">
+                {/* Floating Tools Composition */}
+                <div className="relative w-[500px] h-[500px]">
+                  {/* Decorative Circle */}
                   <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
-                    className="absolute right-4 top-8 glass rounded-2xl p-3 shadow-2xl"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    className="absolute inset-12 rounded-full border border-white/10"
+                  />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, delay: 0.6 }}
+                    className="absolute inset-24 rounded-full border border-accent/20"
+                  />
+
+                  {/* Tool 1 - Hammer */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30, rotate: -15 }}
+                    animate={{ opacity: 1, y: 0, rotate: -15 }}
+                    transition={{ duration: 0.8, delay: 0.7 }}
+                    className="absolute top-8 left-1/2 -translate-x-1/2"
                   >
-                    <div className="flex items-center gap-2">
-                      <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
-                        <Award className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <p className="text-white font-bold text-sm">Premium</p>
-                        <p className="text-white/60 text-xs">Calidad garantizada</p>
+                    <div className="relative">
+                      <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl">
+                        <svg className="w-10 h-10 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <path d="M15.5 8.5L19 5M19 5L21 7M19 5L17 3M15.5 8.5L5 19L3 21L5 19L15.5 8.5Z" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M13 11L9 7" strokeLinecap="round"/>
+                        </svg>
                       </div>
                     </div>
                   </motion.div>
+
+                  {/* Tool 2 - Saw */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 30, rotate: 10 }}
+                    animate={{ opacity: 1, x: 0, rotate: 10 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                    className="absolute top-1/4 right-4"
+                  >
+                    <div className="w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl">
+                      <svg className="w-12 h-12 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <path d="M3 12H21M3 12L7 8M3 12L7 16M21 12C21 12 19 10 17 10C15 10 14 12 14 12" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M9 8V6M12 8V5M15 8V6" strokeLinecap="round"/>
+                      </svg>
+                    </div>
+                  </motion.div>
+
+                  {/* Tool 3 - Chisel (Center, larger) */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                  >
+                    <div className="w-32 h-32 bg-gradient-to-br from-accent/20 to-accent/5 backdrop-blur-md rounded-3xl border border-accent/30 flex items-center justify-center shadow-2xl">
+                      <svg className="w-16 h-16 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <path d="M14 4L10 8L6 12L4 20L12 18L16 14L20 10" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M14 4L20 10" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M10 8L16 14" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </motion.div>
+
+                  {/* Tool 4 - Plane */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -30, rotate: -10 }}
+                    animate={{ opacity: 1, x: 0, rotate: -10 }}
+                    transition={{ duration: 0.8, delay: 0.9 }}
+                    className="absolute top-1/3 left-4"
+                  >
+                    <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl">
+                      <svg className="w-10 h-10 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <rect x="2" y="10" width="20" height="6" rx="1" strokeLinecap="round"/>
+                        <path d="M6 10V7C6 6 7 5 8 5H16C17 5 18 6 18 7V10" strokeLinecap="round"/>
+                        <path d="M12 16V19" strokeLinecap="round"/>
+                      </svg>
+                    </div>
+                  </motion.div>
+
+                  {/* Tool 5 - Ruler/Square */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30, rotate: 5 }}
+                    animate={{ opacity: 1, y: 0, rotate: 5 }}
+                    transition={{ duration: 0.8, delay: 1 }}
+                    className="absolute bottom-1/4 right-12"
+                  >
+                    <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl">
+                      <Ruler className="w-10 h-10 text-accent" />
+                    </div>
+                  </motion.div>
+
+                  {/* Tool 6 - Screwdriver */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30, rotate: -20 }}
+                    animate={{ opacity: 1, y: 0, rotate: -20 }}
+                    transition={{ duration: 0.8, delay: 1.1 }}
+                    className="absolute bottom-16 left-16"
+                  >
+                    <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-center shadow-2xl">
+                      <svg className="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <path d="M14.5 9.5L9.5 14.5M6 17L4 19L5 20L7 18L6 17Z" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M17 3L21 7L18 10L14 6L17 3Z" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M14 6L9.5 10.5" strokeLinecap="round"/>
+                      </svg>
+                    </div>
+                  </motion.div>
+
+                  {/* Floating Particles */}
+                  <motion.div
+                    animate={{ y: [-10, 10, -10], opacity: [0.3, 0.6, 0.3] }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                    className="absolute top-20 right-20 w-2 h-2 bg-accent rounded-full"
+                  />
+                  <motion.div
+                    animate={{ y: [10, -10, 10], opacity: [0.2, 0.5, 0.2] }}
+                    transition={{ duration: 5, repeat: Infinity }}
+                    className="absolute bottom-32 left-24 w-3 h-3 bg-accent/50 rounded-full"
+                  />
+                  <motion.div
+                    animate={{ y: [-5, 15, -5], opacity: [0.4, 0.7, 0.4] }}
+                    transition={{ duration: 3.5, repeat: Infinity }}
+                    className="absolute top-1/2 right-8 w-1.5 h-1.5 bg-white/50 rounded-full"
+                  />
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -307,37 +374,36 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Stats Section - Sleek Design */}
-      <section ref={statsRef} className="py-20 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,155,80,0.3),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(196,155,80,0.2),transparent_50%)]" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={statsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center relative"
-              >
-                <div className="relative inline-block">
-                  <motion.span
-                    initial={{ scale: 0 }}
-                    animate={statsInView ? { scale: 1 } : {}}
-                    transition={{ duration: 0.5, delay: index * 0.1 + 0.2, type: "spring" }}
-                    className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent via-amber-400 to-accent"
-                  >
-                    {stat.number}{stat.suffix}
-                  </motion.span>
-                </div>
-                <p className="text-white/70 text-sm md:text-base mt-2 font-medium">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
+      {/* Value Proposition Strip */}
+      <section ref={statsRef} className="py-6 bg-white border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={statsInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8 }}
+            className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4"
+          >
+            {[
+              { icon: Shield, text: 'Garantía de 5 años' },
+              { icon: Truck, text: 'Instalación incluida' },
+              { icon: Ruler, text: 'Diseño a medida' },
+              { icon: Award, text: 'Calidad artesanal' },
+            ].map((item, index) => {
+              const Icon = item.icon
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={statsInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="flex items-center gap-2 text-muted-foreground"
+                >
+                  <Icon className="w-4 h-4 text-accent" />
+                  <span className="text-sm font-medium">{item.text}</span>
+                </motion.div>
+              )
+            })}
+          </motion.div>
         </div>
       </section>
 

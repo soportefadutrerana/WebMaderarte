@@ -80,21 +80,37 @@ export function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href="/" className="flex items-center group relative z-50">
+            {/* Logo + Brand Name */}
+            <Link href="/" className="flex items-center gap-3 group relative z-50">
               <motion.div
                 className={`relative transition-all duration-500 ${
-                  isScrolled ? 'w-44 h-14' : 'w-56 h-16'
+                  isScrolled ? 'w-12 h-12' : 'w-14 h-14'
                 }`}
               >
                 <Image
-                  src="/logo/madearte.webp"
+                  src="/logo/madearte.png"
                   alt="Maderarte Utrera Logo"
                   fill
                   className="object-contain relative z-10"
                   priority
                 />
               </motion.div>
+              <div className="flex flex-col">
+                <span className={`font-serif font-bold tracking-wide transition-all duration-500 ${
+                  isScrolled
+                    ? 'text-xl text-primary'
+                    : 'text-2xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'
+                }`}>
+                  Maderarte
+                </span>
+                <span className={`text-[10px] uppercase tracking-[0.2em] transition-all duration-500 ${
+                  isScrolled
+                    ? 'text-accent'
+                    : 'text-accent drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]'
+                }`}>
+                  Carpintería Artesanal
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -207,14 +223,22 @@ export function Header() {
               >
                 {/* Menu Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-100">
-                  <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
-                    <div className="relative w-36 h-10">
+                  <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2">
+                    <div className="relative w-10 h-10">
                       <Image
-                        src="/logo/madearte.webp"
+                        src="/logo/madearte.png"
                         alt="Maderarte"
                         fill
                         className="object-contain"
                       />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="font-serif font-bold text-lg text-primary tracking-wide">
+                        Maderarte
+                      </span>
+                      <span className="text-[9px] uppercase tracking-[0.15em] text-accent">
+                        Carpintería Artesanal
+                      </span>
                     </div>
                   </Link>
                   <button

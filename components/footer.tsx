@@ -67,7 +67,7 @@ export function Footer() {
             <Link href="/" className="inline-block mb-6">
               <div className="relative w-48 h-14">
                 <Image
-                  src="/logo/madearte.webp"
+                  src="/logo/madearte.png"
                   alt="Maderarte Utrera"
                   fill
                   className="object-contain"
