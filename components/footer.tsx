@@ -33,49 +33,31 @@ export function Footer() {
         <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/3 rounded-full blur-3xl" />
       </div>
 
-      {/* Newsletter/CTA Banner */}
-      <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="text-center lg:text-left">
-              <h3 className="text-2xl font-serif font-bold mb-2">¿Listo para tu próximo proyecto?</h3>
-              <p className="text-white/60">Contáctanos hoy y recibe un presupuesto personalizado sin compromiso.</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="btn-premium text-white rounded-full px-8 py-6 font-semibold">
-                <Link href="/contacto">
-                  Solicitar Presupuesto
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-full px-8 py-6">
-                <a href="tel:+34600000000">
-                  <Phone className="mr-2 w-4 h-4" />
-                  Llamar Ahora
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6">
-              <div className="relative w-48 h-14">
+            <Link href="/" className="flex items-center gap-4 mb-8 group transition-transform hover:scale-[1.02] duration-300">
+              <div className="relative w-14 h-14 bg-white rounded-xl p-1 shadow-lg shadow-black/20 group-hover:shadow-accent/10 transition-all">
                 <Image
                   src="/logo/madearte.png"
                   alt="Maderarte Utrera"
                   fill
-                  className="object-contain"
+                  className="object-contain p-1"
                 />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif font-bold text-2xl text-white tracking-wide group-hover:text-accent transition-colors leading-tight">
+                  Maderarte
+                </span>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-semibold">
+                  Carpintería Artesanal
+                </span>
               </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
-              Más de 25 años creando espacios únicos. La madera bien trabajada se nota el primer día y se agradece muchos años.
+              En Maderarte damos forma a espacios únicos. La calidad se percibe desde el primer día y se disfruta durante años.
             </p>
 
             {/* Social Links */}
@@ -186,7 +168,7 @@ export function Footer() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-white">Email</p>
-                    <p className="text-sm">info@maderarte-utrera.com</p>
+                    <p className="text-sm">info@maderarteutrera.com</p>
                   </div>
                 </a>
               </li>
@@ -197,7 +179,7 @@ export function Footer() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-white">Horario</p>
-                    <p className="text-sm">Lun - Vie: 8:00 - 19:00</p>
+                    <p className="text-sm">Lun - Vie: 9:00 - 18:30</p>
                   </div>
                 </div>
               </li>
@@ -211,7 +193,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
             <p>
-              © {currentYear} Maderarte Utrera S.L. Todos los derechos reservados.
+              © {currentYear} Maderarte S.L. Todos los derechos reservados.
             </p>
             <div className="flex items-center gap-6">
               <Link href="/privacidad" className="hover:text-white transition-colors">

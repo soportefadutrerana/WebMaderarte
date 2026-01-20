@@ -126,19 +126,29 @@ export default function SobreNosotrosPage() {
         </div>
       </section>
 
-      <section ref={valuesRef} className="py-20 bg-gradient-to-br from-secondary to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Nuestros Valores Section - Modern & Professional Redesign */}
+      <section ref={valuesRef} className="py-24 bg-white relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-accent/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={valuesInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
           >
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4">
-              Nuestros Valores
+            <span className="inline-flex items-center gap-2 text-accent font-bold text-sm uppercase tracking-[0.3em] mb-4">
+              <span className="w-10 h-[2px] bg-accent"></span>
+              Nuestra Esencia
+            </span>
+            <h2 className="font-serif text-5xl md:text-6xl font-bold text-primary mb-6">
+              Nuestros <span className="text-gradient">Valores</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Los pilares que definen nuestra forma de trabajar
+            <div className="w-24 h-1.5 bg-accent mx-auto mb-8 rounded-full"></div>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Los pilares fundamentales que guían cada uno de nuestros proyectos y definen nuestra excelencia artesanal.
             </p>
           </motion.div>
 
@@ -148,18 +158,38 @@ export default function SobreNosotrosPage() {
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 40 }}
                   animate={valuesInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.15 }}
-                  className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow"
+                  className="group relative"
                 >
-                  {Icon && (
-                    <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Icon className="w-8 h-8 text-accent" />
+                  {/* Card Background with hover effect */}
+                  <div className="absolute inset-0 bg-white rounded-[2rem] shadow-xl shadow-black/[0.03] group-hover:shadow-accent/10 transition-all duration-500 border border-gray-100 group-hover:border-accent/20 group-hover:-translate-y-2 opacity-100" />
+
+                  <div className="relative p-10 flex flex-col items-center text-center">
+                    {/* Icon Container */}
+                    <div className="relative mb-8 transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                      <div className="absolute inset-0 bg-accent/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="relative w-20 h-20 bg-primary rounded-2xl flex items-center justify-center shadow-lg group-hover:bg-accent transition-colors duration-500">
+                        {Icon && <Icon className="w-10 h-10 text-white" />}
+                      </div>
+
+                      {/* Step index hint */}
+                      <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center text-[10px] font-black text-primary border border-gray-50">
+                        0{index + 1}
+                      </div>
                     </div>
-                  )}
-                  <h3 className="text-xl font-bold text-primary mb-3">{value?.title ?? ''}</h3>
-                  <p className="text-muted-foreground">{value?.description ?? ''}</p>
+
+                    <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight group-hover:text-accent transition-colors duration-500">
+                      {value?.title ?? ''}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {value?.description ?? ''}
+                    </p>
+
+                    {/* Decorative bottom line */}
+                    <div className="w-12 h-1 bg-accent/20 mt-8 rounded-full transition-all duration-500 group-hover:w-24 group-hover:bg-accent" />
+                  </div>
                 </motion.div>
               )
             })}

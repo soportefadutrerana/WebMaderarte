@@ -117,16 +117,15 @@ export default function ServiciosPage() {
             {services?.map((service, index) => {
               const Icon = service?.icon
               const isEven = index % 2 === 0
-              
+
               return (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: isEven ? -30 : 30 }}
                   animate={servicesInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${
-                    isEven ? '' : 'lg:direction-rtl'
-                  }`}
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${isEven ? '' : 'lg:direction-rtl'
+                    }`}
                 >
                   <div className={`${isEven ? '' : 'lg:order-2'}`}>
                     <div className="relative aspect-[4/3] bg-muted rounded-lg overflow-hidden shadow-lg">
@@ -149,7 +148,7 @@ export default function ServiciosPage() {
                     <p className="text-lg text-muted-foreground mb-6">
                       {service?.description ?? ''}
                     </p>
-                    
+
                     <div className="space-y-3 mb-6">
                       {service?.features?.map((feature, idx) => (
                         <div key={idx} className="flex items-start">
@@ -173,41 +172,7 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      <section ref={processRef} className="py-20 bg-gradient-to-br from-secondary to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={processInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4">
-              Nuestro Proceso
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Un método claro y controlado para garantizar resultados perfectos
-            </p>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {processSteps?.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={processInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
-              >
-                <div className="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center font-bold text-xl mb-4">
-                  {item?.step ?? ''}
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-2">{item?.title ?? ''}</h3>
-                <p className="text-muted-foreground">{item?.description ?? ''}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="py-20 bg-primary text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

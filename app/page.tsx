@@ -105,8 +105,7 @@ const testimonials = [
 const features = [
   { icon: CheckCircle, text: 'Presupuesto cerrado', description: 'Sin sorpresas ni costes ocultos' },
   { icon: Calendar, text: 'Plazos garantizados', description: 'Cumplimos las fechas acordadas' },
-  { icon: Award, text: 'Acabado artesanal', description: 'Calidad en cada detalle' },
-  { icon: Shield, text: 'Garantía de 5 años', description: 'Respaldamos nuestro trabajo' }
+  { icon: Award, text: 'Acabado artesanal', description: 'Calidad en cada detalle' }
 ]
 
 const stats = [
@@ -252,8 +251,8 @@ export default function HomePage() {
                     <div className="relative">
                       <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl">
                         <svg className="w-10 h-10 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                          <path d="M15.5 8.5L19 5M19 5L21 7M19 5L17 3M15.5 8.5L5 19L3 21L5 19L15.5 8.5Z" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M13 11L9 7" strokeLinecap="round"/>
+                          <path d="M15.5 8.5L19 5M19 5L21 7M19 5L17 3M15.5 8.5L5 19L3 21L5 19L15.5 8.5Z" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M13 11L9 7" strokeLinecap="round" />
                         </svg>
                       </div>
                     </div>
@@ -268,8 +267,8 @@ export default function HomePage() {
                   >
                     <div className="w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl">
                       <svg className="w-12 h-12 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <path d="M3 12H21M3 12L7 8M3 12L7 16M21 12C21 12 19 10 17 10C15 10 14 12 14 12" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M9 8V6M12 8V5M15 8V6" strokeLinecap="round"/>
+                        <path d="M3 12H21M3 12L7 8M3 12L7 16M21 12C21 12 19 10 17 10C15 10 14 12 14 12" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M9 8V6M12 8V5M15 8V6" strokeLinecap="round" />
                       </svg>
                     </div>
                   </motion.div>
@@ -283,9 +282,9 @@ export default function HomePage() {
                   >
                     <div className="w-32 h-32 bg-gradient-to-br from-accent/20 to-accent/5 backdrop-blur-md rounded-3xl border border-accent/30 flex items-center justify-center shadow-2xl">
                       <svg className="w-16 h-16 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <path d="M14 4L10 8L6 12L4 20L12 18L16 14L20 10" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M14 4L20 10" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M10 8L16 14" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M14 4L10 8L6 12L4 20L12 18L16 14L20 10" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M14 4L20 10" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M10 8L16 14" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
                   </motion.div>
@@ -299,9 +298,9 @@ export default function HomePage() {
                   >
                     <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl">
                       <svg className="w-10 h-10 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <rect x="2" y="10" width="20" height="6" rx="1" strokeLinecap="round"/>
-                        <path d="M6 10V7C6 6 7 5 8 5H16C17 5 18 6 18 7V10" strokeLinecap="round"/>
-                        <path d="M12 16V19" strokeLinecap="round"/>
+                        <rect x="2" y="10" width="20" height="6" rx="1" strokeLinecap="round" />
+                        <path d="M6 10V7C6 6 7 5 8 5H16C17 5 18 6 18 7V10" strokeLinecap="round" />
+                        <path d="M12 16V19" strokeLinecap="round" />
                       </svg>
                     </div>
                   </motion.div>
@@ -327,9 +326,9 @@ export default function HomePage() {
                   >
                     <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-center shadow-2xl">
                       <svg className="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <path d="M14.5 9.5L9.5 14.5M6 17L4 19L5 20L7 18L6 17Z" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M17 3L21 7L18 10L14 6L17 3Z" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M14 6L9.5 10.5" strokeLinecap="round"/>
+                        <path d="M14.5 9.5L9.5 14.5M6 17L4 19L5 20L7 18L6 17Z" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M17 3L21 7L18 10L14 6L17 3Z" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M14 6L9.5 10.5" strokeLinecap="round" />
                       </svg>
                     </div>
                   </motion.div>
@@ -375,31 +374,37 @@ export default function HomePage() {
       </section>
 
       {/* Value Proposition Strip */}
-      <section ref={statsRef} className="py-6 bg-white border-y border-gray-100">
+      <section ref={statsRef} className="py-12 bg-primary border-b border-white/10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
             animate={statsInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8 }}
-            className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-8"
           >
             {[
-              { icon: Shield, text: 'Garantía de 5 años' },
-              { icon: Truck, text: 'Instalación incluida' },
-              { icon: Ruler, text: 'Diseño a medida' },
-              { icon: Award, text: 'Calidad artesanal' },
+              { icon: Shield, text: 'Garantía de 5 años', sub: 'Cobertura integral' },
+              { icon: Truck, text: 'Instalación incluida', sub: 'Sin costes ocultos' },
+              { icon: Ruler, text: 'Diseño a medida', sub: 'Personalización total' },
+              { icon: Award, text: 'Calidad artesanal', sub: 'Acabados premium' },
             ].map((item, index) => {
               const Icon = item.icon
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={statsInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-center gap-2 text-muted-foreground"
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="flex flex-col items-center text-center group cursor-default"
                 >
-                  <Icon className="w-4 h-4 text-accent" />
-                  <span className="text-sm font-medium">{item.text}</span>
+                  <div className="mb-4 relative">
+                    <div className="absolute inset-0 bg-accent/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/10 group-hover:border-accent/20 transition-all duration-300">
+                      <Icon className="w-6 h-6 text-accent" />
+                    </div>
+                  </div>
+                  <span className="text-lg font-semibold text-white mb-1">{item.text}</span>
+                  <p className="text-sm text-white/50">{item.sub}</p>
                 </motion.div>
               )
             })}
@@ -567,108 +572,151 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features Section - Why Choose Us */}
-      <section ref={featuresRef} className="py-28 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/5 to-transparent" />
+      {/* Features Section - Why Choose Us - Editorial Masonry Design */}
+      <section ref={featuresRef} className="py-32 bg-[#fafafa] relative overflow-hidden">
+        {/* Background Texture/Pattern */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{ backgroundImage: 'radial-gradient(#1a1410 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            {/* Left Column - Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={featuresInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-wider mb-4">
-                <span className="w-12 h-px bg-accent/50"></span>
-                Nuestra Promesa
-              </span>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-6 leading-tight">
-                Por Qué Confiar
-                <br />
-                <span className="text-gradient">en Nosotros</span>
-              </h2>
-              <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-                No competimos por precio, competimos por <span className="font-semibold text-primary">calidad, personalización y cumplimiento</span>. Cada proyecto es único y lo tratamos como tal.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-20 items-start">
 
-              <div className="grid sm:grid-cols-2 gap-6">
-                {features.map((feature, index) => {
-                  const Icon = feature.icon
-                  return (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={featuresInView ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="flex gap-4 p-5 rounded-2xl bg-gray-50/80 hover:bg-accent/5 transition-colors border border-transparent hover:border-accent/20"
-                    >
-                      <div className="flex-shrink-0 w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center">
-                        <Icon className="w-7 h-7 text-accent" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-primary mb-1">{feature.text}</h3>
-                        <p className="text-sm text-muted-foreground">{feature.description}</p>
-                      </div>
-                    </motion.div>
-                  )
-                })}
-              </div>
-            </motion.div>
-
-            {/* Right Column - Image Composition */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={featuresInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative hidden lg:block"
-            >
-              <div className="relative">
-                {/* Decorative background */}
-                <div className="absolute -inset-4 bg-gradient-to-tr from-accent/20 via-accent/5 to-transparent rounded-3xl blur-2xl" />
-
-                {/* Main Image */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  <div className="aspect-[4/5]">
-                    <Image
-                      src="https://cdn.abacus.ai/images/cea69fe1-3d0b-4d54-a766-792df39678d4.png"
-                      alt="Armario a medida de alta calidad"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+            {/* Left Column - Sticky Content */}
+            <div className="lg:sticky lg:top-32">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={featuresInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="inline-flex items-center gap-4 mb-6">
+                  <span className="h-px w-10 bg-accent"></span>
+                  <span className="text-accent font-bold tracking-[0.2em] text-sm uppercase">Nuestra Filosofía</span>
                 </div>
 
-                {/* Floating Quality Card */}
+                <h2 className="font-serif text-5xl md:text-7xl font-bold text-primary mb-8 leading-[1.05]">
+                  La <span className="italic text-accent">Maestría</span> de lo Artesanal
+                </h2>
+
+                <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-lg">
+                  Entendemos la madera no solo como material, sino como un elemento vivo que aporta alma a cada espacio. Nuestra promesa es la <span className="text-primary font-bold">perfección técnica</span> en cada corte.
+                </p>
+
+                {/* Vertical Feature List - Premium Timeline Style */}
+                <div className="relative mt-16 space-y-12">
+                  {/* Decorative connecting line */}
+                  <div className="absolute left-8 top-8 bottom-8 w-px bg-gradient-to-b from-accent/50 via-primary/10 to-transparent hidden sm:block" />
+
+                  {features.map((feature, index) => {
+                    const Icon = feature.icon
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={featuresInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.7, delay: 0.3 + index * 0.15 }}
+                        className="group relative flex items-start gap-8"
+                      >
+                        {/* Icon Container with Timeline Indicator */}
+                        <div className="relative z-10 flex-shrink-0">
+                          <div className="w-16 h-16 rounded-2xl bg-white shadow-xl shadow-black/[0.03] border border-gray-100 flex items-center justify-center transition-all duration-500 group-hover:bg-primary group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-primary/20">
+                            <Icon className="w-7 h-7 text-accent group-hover:text-white transition-colors duration-500" />
+                          </div>
+                          {/* Step Number Badge */}
+                          <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white shadow-lg border border-gray-50 flex items-center justify-center text-[10px] font-black pointer-events-none group-hover:bg-accent group-hover:text-white transition-colors duration-500">
+                            <span className="text-accent group-hover:text-white">0{index + 1}</span>
+                          </div>
+                        </div>
+
+                        {/* Content Card */}
+                        <div className="flex-grow pt-1">
+                          <div className="inline-block py-1 px-3 rounded-full bg-accent/5 text-[10px] font-bold text-accent uppercase tracking-widest mb-3 opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-y-2 group-hover:translate-y-0">
+                            Excelencia {index === 0 ? 'Garantizada' : index === 1 ? 'Comprometida' : 'Artesanal'}
+                          </div>
+                          <h3 className="text-2xl font-bold text-primary mb-3 tracking-tight group-hover:text-accent transition-colors duration-500">
+                            {feature.text}
+                          </h3>
+                          <p className="text-muted-foreground leading-relaxed text-lg max-w-sm group-hover:text-primary/70 transition-colors duration-500">
+                            {feature.description}
+                          </p>
+
+                          {/* Hover Underline */}
+                          <div className="w-0 h-px bg-accent mt-4 transition-all duration-500 group-hover:w-24" />
+                        </div>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Right Column - Asymmetric Masonry Grid */}
+            <div className="relative">
+              <div className="grid grid-cols-2 gap-6 items-start">
+
+                {/* Large Tall Image */}
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={featuresInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                  className="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-2xl p-6 max-w-xs border border-gray-100"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={featuresInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  className="relative aspect-[3/5] rounded-[2.5rem] overflow-hidden shadow-2xl group lg:translate-y-20"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-accent to-amber-600 rounded-2xl flex items-center justify-center">
-                      <Star className="w-7 h-7 text-white fill-white" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-primary text-lg">Calidad Premium</p>
-                      <p className="text-sm text-muted-foreground">Materiales de primera calidad</p>
-                    </div>
-                  </div>
+                  <Image
+                    src="https://cdn.abacus.ai/images/cea69fe1-3d0b-4d54-a766-792df39678d4.png"
+                    alt="Carpintería artesanal"
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </motion.div>
 
-                {/* Years badge */}
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={featuresInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  className="absolute -top-6 -right-6 w-28 h-28 bg-primary rounded-full flex flex-col items-center justify-center shadow-xl"
-                >
-                  <span className="text-3xl font-bold text-accent">25+</span>
-                  <span className="text-xs text-white/70">años</span>
-                </motion.div>
+                <div className="space-y-6">
+                  {/* Square Image */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={featuresInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                    className="relative aspect-square rounded-[2rem] overflow-hidden shadow-xl group border-4 border-white"
+                  >
+                    <Image
+                      src="https://cdn.abacus.ai/images/19c212a3-7406-4aaa-ab72-ef8b8b1e258b.png"
+                      alt="Detalle madera"
+                      fill
+                      className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
+                  </motion.div>
+
+                  {/* Accented Card */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={featuresInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.7 }}
+                    className="bg-accent rounded-[2rem] p-8 text-white relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500"
+                  >
+                    <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:scale-110 transition-transform">
+                      <Quote className="w-16 h-16" />
+                    </div>
+                    <div className="relative z-10">
+                      <div className="flex gap-1 mb-6">
+                        {[1, 2, 3, 4, 5].map((s) => (
+                          <Star key={s} className="w-4 h-4 fill-white" />
+                        ))}
+                      </div>
+                      <p className="font-serif text-2xl italic leading-relaxed mb-6">
+                        &quot;La calidad se siente en el pulido de cada veta.&quot;
+                      </p>
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-px bg-white/40"></div>
+                        <span className="text-xs font-bold uppercase tracking-widest">Maestros Carpinteros</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Wide Image at the bottom of the grid or separate */}
               </div>
-            </motion.div>
+
+
+            </div>
           </div>
         </div>
       </section>
@@ -789,12 +837,6 @@ export default function HomePage() {
                   Solicitar Presupuesto Gratis
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="glass border-white/20 text-white hover:bg-white/10 rounded-full px-10 py-8 text-lg">
-                <a href="tel:+34600000000" className="flex items-center gap-2">
-                  <Phone className="w-5 h-5" />
-                  600 000 000
-                </a>
               </Button>
             </div>
           </motion.div>

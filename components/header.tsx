@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Phone, MapPin, Clock, ChevronDown } from 'lucide-react'
+import { Menu, X, MapPin, Clock, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 
@@ -53,18 +53,9 @@ export function Header() {
                 </span>
                 <span className="flex items-center gap-2 px-6 text-white/80 hover:text-white transition-colors cursor-default">
                   <Clock className="w-3.5 h-3.5 text-accent" />
-                  Lun - Vie: 8:00 - 19:00
+                  Lun - Vie: 9:00 - 18:30
                 </span>
-              </div>
-              <a
-                href="tel:+34600000000"
-                className="flex items-center gap-2 text-white font-medium hover:text-accent transition-colors"
-              >
-                <span className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center">
-                  <Phone className="w-3 h-3 text-accent" />
-                </span>
-                600 000 000
-              </a>
+              </div>              
             </div>
           </div>
         </div>
@@ -143,24 +134,8 @@ export function Header() {
               })}
             </nav>
 
-            {/* CTA Button & Mobile Toggle */}
+            {/* Mobile Toggle */}
             <div className="flex items-center gap-3">
-              <div className="hidden lg:block">
-                <Button
-                  asChild
-                  className={`rounded-full px-6 py-5 text-sm font-semibold transition-all duration-300 ${
-                    isScrolled
-                      ? 'btn-premium text-white shadow-lg'
-                      : 'bg-accent hover:bg-accent/90 text-white shadow-xl'
-                  }`}
-                >
-                  <a href="tel:+34600000000" className="flex items-center gap-2">
-                    <Phone className="w-4 h-4" />
-                    <span>Llamar</span>
-                  </a>
-                </Button>
-              </div>
-
               {/* Mobile Menu Button */}
               <button
                 className={`lg:hidden relative w-12 h-12 rounded-full flex items-center justify-center transition-colors ${
@@ -283,19 +258,6 @@ export function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <Button
-                    asChild
-                    className="w-full btn-premium text-white rounded-xl py-6 text-lg font-semibold mb-4"
-                  >
-                    <a
-                      href="tel:+34600000000"
-                      className="flex items-center justify-center gap-2"
-                    >
-                      <Phone className="w-5 h-5" />
-                      Llamar Ahora
-                    </a>
-                  </Button>
-
                   <Button
                     asChild
                     variant="outline"
