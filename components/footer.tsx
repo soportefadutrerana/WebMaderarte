@@ -154,7 +154,7 @@ export function Footer() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-white">Teléfono</p>
-                    <p className="text-sm">600 000 000</p>
+                    <p className="text-sm">955387218</p>
                   </div>
                 </a>
               </li>

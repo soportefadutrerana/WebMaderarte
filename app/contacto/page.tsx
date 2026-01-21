@@ -231,7 +231,7 @@ export default function ContactoPage() {
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Teléfono</h4>
                       <a href="tel:+34600000000" className="text-muted-foreground hover:text-accent transition-colors">
-                        600 000 000
+                        955387218
                       </a>
                     </div>
                   </div>
@@ -243,7 +243,7 @@ export default function ContactoPage() {
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Email</h4>
                       <a href="mailto:info@maderarte-utrera.com" className="text-muted-foreground hover:text-accent transition-colors">
-                        info@maderarte-utrera.com
+                        info@maderarteutrera.com
                       </a>
                     </div>
                   </div>
@@ -254,8 +254,7 @@ export default function ContactoPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Horario</h4>
-                      <p className="text-muted-foreground">Lunes - Viernes: 8:00 - 18:00</p>
-                      <p className="text-muted-foreground">Sábado: 9:00 - 14:00</p>
+                      <p className="text-muted-foreground">Lunes - Viernes: 9:00 - 18:30</p>
                     </div>
                   </div>
                 </div>
