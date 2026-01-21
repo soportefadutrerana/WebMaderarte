@@ -227,29 +227,49 @@ export default function HomePage() {
               <div className="hidden lg:flex items-center justify-center relative">
                 {/* Floating Tools Composition */}
                 <div className="relative w-[500px] h-[500px]">
-                  {/* Decorative Circle */}
+                  {/* Animated Orbit Circles */}
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, delay: 0.5 }}
-                    className="absolute inset-12 rounded-full border border-white/10"
+                    className="absolute inset-8 rounded-full border border-white/5"
+                  />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1, rotate: 360 }}
+                    transition={{
+                      opacity: { duration: 1, delay: 0.5 },
+                      scale: { duration: 1, delay: 0.5 },
+                      rotate: { duration: 60, repeat: Infinity, ease: "linear" }
+                    }}
+                    className="absolute inset-16 rounded-full border border-accent/10"
+                    style={{ borderStyle: 'dashed' }}
                   />
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, delay: 0.6 }}
-                    className="absolute inset-24 rounded-full border border-accent/20"
+                    className="absolute inset-28 rounded-full border border-accent/20"
                   />
 
-                  {/* Tool 1 - Hammer */}
+                  {/* Tool 1 - Hammer (Top) */}
                   <motion.div
-                    initial={{ opacity: 0, y: 30, rotate: -15 }}
-                    animate={{ opacity: 1, y: 0, rotate: -15 }}
-                    transition={{ duration: 0.8, delay: 0.7 }}
-                    className="absolute top-8 left-1/2 -translate-x-1/2"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{
+                      opacity: 1,
+                      y: [0, -8, 0],
+                      rotate: [-15, -12, -15]
+                    }}
+                    transition={{
+                      opacity: { duration: 0.8, delay: 0.7 },
+                      y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                      rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                    className="absolute top-8 left-1/2 -translate-x-1/2 group cursor-pointer"
                   >
                     <div className="relative">
-                      <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl">
+                      <div className="absolute inset-0 bg-accent/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 flex items-center justify-center shadow-2xl group-hover:bg-white/15 group-hover:border-accent/40 group-hover:scale-110 transition-all duration-300">
                         <svg className="w-10 h-10 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                           <path d="M15.5 8.5L19 5M19 5L21 7M19 5L17 3M15.5 8.5L5 19L3 21L5 19L15.5 8.5Z" strokeLinecap="round" strokeLinejoin="round" />
                           <path d="M13 11L9 7" strokeLinecap="round" />
@@ -258,96 +278,216 @@ export default function HomePage() {
                     </div>
                   </motion.div>
 
-                  {/* Tool 2 - Saw */}
+                  {/* Tool 2 - Saw (Top Right) */}
                   <motion.div
-                    initial={{ opacity: 0, x: 30, rotate: 10 }}
-                    animate={{ opacity: 1, x: 0, rotate: 10 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                    className="absolute top-1/4 right-4"
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{
+                      opacity: 1,
+                      x: [0, 6, 0],
+                      y: [0, -6, 0],
+                      rotate: [10, 14, 10]
+                    }}
+                    transition={{
+                      opacity: { duration: 0.8, delay: 0.8 },
+                      x: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                      y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 },
+                      rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                    className="absolute top-1/4 right-4 group cursor-pointer"
                   >
-                    <div className="w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl">
-                      <svg className="w-12 h-12 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <path d="M3 12H21M3 12L7 8M3 12L7 16M21 12C21 12 19 10 17 10C15 10 14 12 14 12" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M9 8V6M12 8V5M15 8V6" strokeLinecap="round" />
-                      </svg>
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-accent/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 flex items-center justify-center shadow-2xl group-hover:bg-white/15 group-hover:border-accent/40 group-hover:scale-110 transition-all duration-300">
+                        <svg className="w-12 h-12 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <path d="M3 12H21M3 12L7 8M3 12L7 16M21 12C21 12 19 10 17 10C15 10 14 12 14 12" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M9 8V6M12 8V5M15 8V6" strokeLinecap="round" />
+                        </svg>
+                      </div>
                     </div>
                   </motion.div>
 
-                  {/* Tool 3 - Chisel (Center, larger) */}
+                  {/* Tool 3 - Chisel (Center, larger - Main Focus) */}
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                    animate={{
+                      opacity: 1,
+                      scale: [1, 1.03, 1]
+                    }}
+                    transition={{
+                      opacity: { duration: 0.8, delay: 0.6 },
+                      scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group cursor-pointer"
                   >
-                    <div className="w-32 h-32 bg-gradient-to-br from-accent/20 to-accent/5 backdrop-blur-md rounded-3xl border border-accent/30 flex items-center justify-center shadow-2xl">
-                      <svg className="w-16 h-16 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <path d="M14 4L10 8L6 12L4 20L12 18L16 14L20 10" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M14 4L20 10" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M10 8L16 14" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
+                    <div className="relative">
+                      {/* Glow effect */}
+                      <div className="absolute -inset-4 bg-gradient-to-br from-accent/40 to-accent/10 rounded-[2rem] blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative w-32 h-32 bg-gradient-to-br from-accent/30 via-accent/15 to-accent/5 backdrop-blur-md rounded-3xl border border-accent/40 flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:border-accent/60 transition-all duration-300">
+                        <svg className="w-16 h-16 text-accent drop-shadow-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <path d="M14 4L10 8L6 12L4 20L12 18L16 14L20 10" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M14 4L20 10" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M10 8L16 14" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
                     </div>
                   </motion.div>
 
-                  {/* Tool 4 - Plane */}
+                  {/* Tool 4 - Plane (Left) */}
                   <motion.div
-                    initial={{ opacity: 0, x: -30, rotate: -10 }}
-                    animate={{ opacity: 1, x: 0, rotate: -10 }}
-                    transition={{ duration: 0.8, delay: 0.9 }}
-                    className="absolute top-1/3 left-4"
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{
+                      opacity: 1,
+                      x: [0, -6, 0],
+                      y: [0, 4, 0],
+                      rotate: [-10, -6, -10]
+                    }}
+                    transition={{
+                      opacity: { duration: 0.8, delay: 0.9 },
+                      x: { duration: 4.5, repeat: Infinity, ease: "easeInOut" },
+                      y: { duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 },
+                      rotate: { duration: 4.5, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                    className="absolute top-1/3 left-4 group cursor-pointer"
                   >
-                    <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl">
-                      <svg className="w-10 h-10 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <rect x="2" y="10" width="20" height="6" rx="1" strokeLinecap="round" />
-                        <path d="M6 10V7C6 6 7 5 8 5H16C17 5 18 6 18 7V10" strokeLinecap="round" />
-                        <path d="M12 16V19" strokeLinecap="round" />
-                      </svg>
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-accent/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 flex items-center justify-center shadow-2xl group-hover:bg-white/15 group-hover:border-accent/40 group-hover:scale-110 transition-all duration-300">
+                        <svg className="w-10 h-10 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <rect x="2" y="10" width="20" height="6" rx="1" strokeLinecap="round" />
+                          <path d="M6 10V7C6 6 7 5 8 5H16C17 5 18 6 18 7V10" strokeLinecap="round" />
+                          <path d="M12 16V19" strokeLinecap="round" />
+                        </svg>
+                      </div>
                     </div>
                   </motion.div>
 
-                  {/* Tool 5 - Ruler/Square */}
+                  {/* Tool 5 - Ruler/Square (Bottom Right) */}
                   <motion.div
-                    initial={{ opacity: 0, y: 30, rotate: 5 }}
-                    animate={{ opacity: 1, y: 0, rotate: 5 }}
-                    transition={{ duration: 0.8, delay: 1 }}
-                    className="absolute bottom-1/4 right-12"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{
+                      opacity: 1,
+                      y: [0, 8, 0],
+                      x: [0, 4, 0],
+                      rotate: [5, 10, 5]
+                    }}
+                    transition={{
+                      opacity: { duration: 0.8, delay: 1 },
+                      y: { duration: 5.5, repeat: Infinity, ease: "easeInOut" },
+                      x: { duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 },
+                      rotate: { duration: 5.5, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                    className="absolute bottom-1/4 right-12 group cursor-pointer"
                   >
-                    <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl">
-                      <Ruler className="w-10 h-10 text-accent" />
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-accent/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 flex items-center justify-center shadow-2xl group-hover:bg-white/15 group-hover:border-accent/40 group-hover:scale-110 transition-all duration-300">
+                        <Ruler className="w-10 h-10 text-accent" />
+                      </div>
                     </div>
                   </motion.div>
 
-                  {/* Tool 6 - Screwdriver */}
+                  {/* Tool 6 - Screwdriver (Bottom Left) */}
                   <motion.div
-                    initial={{ opacity: 0, y: 30, rotate: -20 }}
-                    animate={{ opacity: 1, y: 0, rotate: -20 }}
-                    transition={{ duration: 0.8, delay: 1.1 }}
-                    className="absolute bottom-16 left-16"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{
+                      opacity: 1,
+                      y: [0, 6, 0],
+                      x: [0, -5, 0],
+                      rotate: [-20, -15, -20]
+                    }}
+                    transition={{
+                      opacity: { duration: 0.8, delay: 1.1 },
+                      y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                      x: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.2 },
+                      rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                    className="absolute bottom-16 left-16 group cursor-pointer"
                   >
-                    <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-center shadow-2xl">
-                      <svg className="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <path d="M14.5 9.5L9.5 14.5M6 17L4 19L5 20L7 18L6 17Z" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M17 3L21 7L18 10L14 6L17 3Z" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M14 6L9.5 10.5" strokeLinecap="round" />
-                      </svg>
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-accent/30 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative w-16 h-16 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 flex items-center justify-center shadow-2xl group-hover:bg-white/15 group-hover:border-accent/40 group-hover:scale-110 transition-all duration-300">
+                        <svg className="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <path d="M14.5 9.5L9.5 14.5M6 17L4 19L5 20L7 18L6 17Z" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M17 3L21 7L18 10L14 6L17 3Z" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M14 6L9.5 10.5" strokeLinecap="round" />
+                        </svg>
+                      </div>
                     </div>
                   </motion.div>
 
-                  {/* Floating Particles */}
+                  {/* Tool 7 - Clamp (New - Bottom Center) */}
                   <motion.div
-                    animate={{ y: [-10, 10, -10], opacity: [0.3, 0.6, 0.3] }}
-                    transition={{ duration: 4, repeat: Infinity }}
-                    className="absolute top-20 right-20 w-2 h-2 bg-accent rounded-full"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{
+                      opacity: 1,
+                      y: [0, 5, 0],
+                      rotate: [0, 3, 0]
+                    }}
+                    transition={{
+                      opacity: { duration: 0.8, delay: 1.2 },
+                      y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
+                      rotate: { duration: 3.5, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                    className="absolute bottom-8 left-1/2 -translate-x-1/2 group cursor-pointer"
+                  >
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-accent/30 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative w-16 h-16 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 flex items-center justify-center shadow-2xl group-hover:bg-white/15 group-hover:border-accent/40 group-hover:scale-110 transition-all duration-300">
+                        <svg className="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <path d="M4 6H8V18H4V6Z" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M16 6H20V18H16V6Z" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M8 12H16" strokeLinecap="round" />
+                          <path d="M10 10V14M14 10V14" strokeLinecap="round" />
+                        </svg>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Floating Particles with improved animation */}
+                  <motion.div
+                    animate={{
+                      y: [-10, 10, -10],
+                      x: [-5, 5, -5],
+                      opacity: [0.3, 0.7, 0.3],
+                      scale: [1, 1.2, 1]
+                    }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-20 right-20 w-2 h-2 bg-accent rounded-full shadow-lg shadow-accent/50"
                   />
                   <motion.div
-                    animate={{ y: [10, -10, 10], opacity: [0.2, 0.5, 0.2] }}
-                    transition={{ duration: 5, repeat: Infinity }}
-                    className="absolute bottom-32 left-24 w-3 h-3 bg-accent/50 rounded-full"
+                    animate={{
+                      y: [10, -10, 10],
+                      x: [5, -5, 5],
+                      opacity: [0.2, 0.6, 0.2],
+                      scale: [1.2, 1, 1.2]
+                    }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute bottom-32 left-24 w-3 h-3 bg-accent/60 rounded-full shadow-lg shadow-accent/30"
                   />
                   <motion.div
-                    animate={{ y: [-5, 15, -5], opacity: [0.4, 0.7, 0.4] }}
-                    transition={{ duration: 3.5, repeat: Infinity }}
-                    className="absolute top-1/2 right-8 w-1.5 h-1.5 bg-white/50 rounded-full"
+                    animate={{
+                      y: [-5, 15, -5],
+                      opacity: [0.4, 0.8, 0.4]
+                    }}
+                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-1/2 right-8 w-1.5 h-1.5 bg-white/70 rounded-full"
+                  />
+                  <motion.div
+                    animate={{
+                      y: [8, -8, 8],
+                      x: [-3, 3, -3],
+                      opacity: [0.3, 0.5, 0.3]
+                    }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-1/3 right-1/3 w-2 h-2 bg-accent/40 rounded-full"
+                  />
+                  <motion.div
+                    animate={{
+                      y: [-12, 8, -12],
+                      opacity: [0.2, 0.5, 0.2]
+                    }}
+                    transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute bottom-1/3 right-1/4 w-1 h-1 bg-white/60 rounded-full"
                   />
                 </div>
               </div>
